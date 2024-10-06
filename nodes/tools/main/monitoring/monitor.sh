@@ -1,15 +1,15 @@
-#!/bin/bash
+п»ї#!/bin/bash
 
 set_environment_variables() {
     if [ -z "$OWNER" ]; then
-        read -p "Введите свой ник, например телеграмм (без @): " OWNER
-        echo 'Владелец: ' $OWNER
+        read -p "Р’РІРµРґРёС‚Рµ СЃРІРѕР№ РЅРёРє, РЅР°РїСЂРёРјРµСЂ С‚РµР»РµРіСЂР°РјРј (Р±РµР· @): " OWNER
+        echo 'Р’Р»Р°РґРµР»РµС†: ' $OWNER
     fi
     sleep 1
 
     if [ -z "$NODENAME" ]; then
-        read -p "Введите название своего сервера: " NODENAME
-        echo 'Название вашего сервера: ' $NODENAME
+        read -p "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ СЃРІРѕРµРіРѕ СЃРµСЂРІРµСЂР°: " NODENAME
+        echo 'РќР°Р·РІР°РЅРёРµ РІР°С€РµРіРѕ СЃРµСЂРІРµСЂР°: ' $NODENAME
     fi
     sleep 1
 }

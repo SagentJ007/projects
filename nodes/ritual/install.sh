@@ -1,23 +1,23 @@
-#!/bin/bash
+п»ї#!/bin/bash
 echo "-----------------------------------------------------------------------------"
 curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/logo.sh | bash
 echo "-----------------------------------------------------------------------------"
 
-# Функция для запроса параметра у пользователя
+# Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїСЂРѕСЃР° РїР°СЂР°РјРµС‚СЂР° Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 request_param() {
     read -p "$1: " param
     echo $param
 }
 
-# Запрашиваем параметры у пользователя
-echo "Пожалуйста, введите следующие параметры для настройки ноды:"
-RPC_URL=$(request_param "Введите RPC URL")
-PRIVATE_KEY=$(request_param "Введите ваш приватный ключ (начинающийся с 0x)")
+# Р—Р°РїСЂР°С€РёРІР°РµРј РїР°СЂР°РјРµС‚СЂС‹ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+echo "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ СЃР»РµРґСѓСЋС‰РёРµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ РЅР°СЃС‚СЂРѕР№РєРё РЅРѕРґС‹:"
+RPC_URL=$(request_param "Р’РІРµРґРёС‚Рµ RPC URL")
+PRIVATE_KEY=$(request_param "Р’РІРµРґРёС‚Рµ РІР°С€ РїСЂРёРІР°С‚РЅС‹Р№ РєР»СЋС‡ (РЅР°С‡РёРЅР°СЋС‰РёР№СЃСЏ СЃ 0x)")
 
 if [[ "$PRIVATE_KEY" == 0x* ]]; then
-    echo "Вы ввели приватный ключ верно!"
+    echo "Р’С‹ РІРІРµР»Рё РїСЂРёРІР°С‚РЅС‹Р№ РєР»СЋС‡ РІРµСЂРЅРѕ!"
 else
-    echo "Приватный ключ введен не верно. Приватный ключ должен начинаться с 0x"
+    echo "РџСЂРёРІР°С‚РЅС‹Р№ РєР»СЋС‡ РІРІРµРґРµРЅ РЅРµ РІРµСЂРЅРѕ. РџСЂРёРІР°С‚РЅС‹Р№ РєР»СЋС‡ РґРѕР»Р¶РµРЅ РЅР°С‡РёРЅР°С‚СЊСЃСЏ СЃ 0x"
     exit 1
 fi
 
@@ -25,7 +25,7 @@ REGISTRY_ADDRESS=0x3B1554f346DFe5c482Bb4BA31b880c1C18412170
 IMAGE="ritualnetwork/infernet-node:1.2.0"
 
 echo "-----------------------------------------------------------------------------"
-echo "Устанавливаем софт"
+echo "РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃРѕС„С‚"
 echo "-----------------------------------------------------------------------------"
 sudo apt update -y
 bash <(curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/main.sh) &>/dev/null
@@ -33,16 +33,16 @@ bash <(curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/ufw.sh) &
 bash <(curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/docker.sh) &>/dev/null
 
 echo "-----------------------------------------------------------------------------"
-echo "Весь необходимый софт установлен"
+echo "Р’РµСЃСЊ РЅРµРѕР±С…РѕРґРёРјС‹Р№ СЃРѕС„С‚ СѓСЃС‚Р°РЅРѕРІР»РµРЅ"
 echo "-----------------------------------------------------------------------------"
 
-# Клонирование репозитория
+# РљР»РѕРЅРёСЂРѕРІР°РЅРёРµ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ
 cd $HOME
 git clone https://github.com/ritual-net/infernet-container-starter && cd infernet-container-starter
 cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/deploy/config.json
 
 
-# Конфигурация deploy/config.json
+# РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ deploy/config.json
 DEPLOY_JSON=$HOME/infernet-container-starter/deploy/config.json
 sed -i 's|"rpc_url": "[^"]*"|"rpc_url": "'"$RPC_URL"'"|' "$DEPLOY_JSON"
 sed -i 's|"private_key": "[^"]*"|"private_key": "'"$PRIVATE_KEY"'"|' "$DEPLOY_JSON"
@@ -50,7 +50,7 @@ sed -i 's|"registry_address": "[^"]*"|"registry_address": "'"$REGISTRY_ADDRESS"'
 sed -i 's|"sleep": 3|"sleep": 5|' "$DEPLOY_JSON"
 sed -i 's|"batch_size": 100|"batch_size": 1800, "starting_sub_id": 100000|' "$DEPLOY_JSON"
 
-# Конфигурация container/config.json
+# РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ container/config.json
 CONTAINER_JSON=$HOME/infernet-container-starter/projects/hello-world/container/config.json
 
 sed -i 's|"rpc_url": "[^"]*"|"rpc_url": "'"$RPC_URL"'"|' "$CONTAINER_JSON"
@@ -59,15 +59,15 @@ sed -i 's|"registry_address": "[^"]*"|"registry_address": "'"$REGISTRY_ADDRESS"'
 sed -i 's|"sleep": 3|"sleep": 5|' "$CONTAINER_JSON"
 sed -i 's|"batch_size": 100|"batch_size": 1800, "starting_sub_id": 100000|' "$CONTAINER_JSON"
 
-# Конфигурация script/Deploy.s.sol
+# РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ script/Deploy.s.sol
 sed -i 's|address registry = .*|address registry = 0x3B1554f346DFe5c482Bb4BA31b880c1C18412170;|' "$HOME/infernet-container-starter/projects/hello-world/contracts/script/Deploy.s.sol"
 
-# Конфигурация contracts/Makefile
+# РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ contracts/Makefile
 MAKEFILE=$HOME/infernet-container-starter/projects/hello-world/contracts/Makefile
 sed -i 's|sender := .*|sender := '"$PRIVATE_KEY"'|' "$MAKEFILE"
 sed -i 's|RPC_URL := .*|RPC_URL := '"$RPC_URL"'|' "$MAKEFILE"
 
-# Cтарт контейнеров для инициализации новой конфигурации
+# CС‚Р°СЂС‚ РєРѕРЅС‚РµР№РЅРµСЂРѕРІ РґР»СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РЅРѕРІРѕР№ РєРѕРЅС„РёРіСѓСЂР°С†РёРё
 sed -i 's|ritualnetwork/infernet-node:1.0.0|ritualnetwork/infernet-node:1.2.0|' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 sed -i 's|0.0.0.0:4000:4000|0.0.0.0:4321:4000|' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 sed -i 's|8545:3000|8845:3000|' $HOME/infernet-container-starter/deploy/docker-compose.yaml
@@ -75,7 +75,7 @@ sed -i 's|container_name: infernet-anvil|container_name: infernet-anvil\n    res
 
 docker compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml up -d
 
-# Установка Foundry
+# РЈСЃС‚Р°РЅРѕРІРєР° Foundry
 cd $HOME
 mkdir -p foundry
 cd foundry
@@ -86,7 +86,7 @@ source .profile
 
 foundryup
 
-# Установка зависимостей для контрактов
+# РЈСЃС‚Р°РЅРѕРІРєР° Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№ РґР»СЏ РєРѕРЅС‚СЂР°РєС‚РѕРІ
 cd $HOME/infernet-container-starter/projects/hello-world/contracts/lib/
 rm -r forge-std
 rm -r infernet-sdk
@@ -100,11 +100,11 @@ CONTRACT_ADDRESS=$(grep "Deployed SaysHello" logs.txt | awk '{print $NF}')
 rm -rf logs.txt
 
 if [ -z "$CONTRACT_ADDRESS" ]; then
-  echo -e "${err}Произошла ошибка: не удалось прочитать contractAddress из $CONTRACT_DATA_FILE${end}"
+  echo -e "${err}РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°: РЅРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ contractAddress РёР· $CONTRACT_DATA_FILE${end}"
   exit 1
 fi
 
-echo -e "${fmt}Адрес вашего контракта: $CONTRACT_ADDRESS${end}"
+echo -e "${fmt}РђРґСЂРµСЃ РІР°С€РµРіРѕ РєРѕРЅС‚СЂР°РєС‚Р°: $CONTRACT_ADDRESS${end}"
 sed -i 's|0x13D69Cf7d6CE4218F646B759Dcf334D82c023d8e|'$CONTRACT_ADDRESS'|' "$HOME/infernet-container-starter/projects/hello-world/contracts/script/CallContract.s.sol"
 
 # Call Consumer Contract

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\projects\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projects\\nodes\\tools\\main\\monitoring\\monitor.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:nodes\\tools\\main\\monitoring\\monitor.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projects\\nodes\\ritual\\install.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:nodes\\ritual\\install.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -27,19 +31,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "monitor.sh",
+              "DocumentMoniker": "D:\\projects\\nodes\\tools\\main\\monitoring\\monitor.sh",
+              "RelativeDocumentMoniker": "nodes\\tools\\main\\monitoring\\monitor.sh",
+              "ToolTip": "D:\\projects\\nodes\\tools\\main\\monitoring\\monitor.sh",
+              "RelativeToolTip": "nodes\\tools\\main\\monitoring\\monitor.sh",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-06T20:25:25.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "install.sh",
               "DocumentMoniker": "D:\\projects\\nodes\\ritual\\install.sh",
               "RelativeDocumentMoniker": "nodes\\ritual\\install.sh",
               "ToolTip": "D:\\projects\\nodes\\ritual\\install.sh",
               "RelativeToolTip": "nodes\\ritual\\install.sh",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-10-06T19:49:10.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "docker-compose.yaml",
               "DocumentMoniker": "D:\\projects\\nodes\\ritual\\docker-compose.yaml",
               "RelativeDocumentMoniker": "nodes\\ritual\\docker-compose.yaml",
@@ -47,8 +64,7 @@
               "RelativeToolTip": "nodes\\ritual\\docker-compose.yaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-10-06T19:48:34.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T19:48:34.684Z"
             }
           ]
         }

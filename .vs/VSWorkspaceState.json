@@ -4,7 +4,9 @@
     "\\nodes",
     "\\nodes\\ritual",
     "\\nodes\\tools",
-    "\\nodes\\tools\\main"
+    "\\nodes\\tools\\main",
+    "\\nodes\\tools\\main\\monitoring"
   ],
+  "SelectedNode": "\\nodes\\tools\\main\\monitoring\\monitor.sh",
   "PreviewInSolutionExplorer": false
 }
