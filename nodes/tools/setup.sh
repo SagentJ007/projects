@@ -3,13 +3,13 @@
 node=$1
 option=$2
 
-main="https://raw.githubusercontent.com/SagentJ007/tools/main/main.sh"
-monitoring="https://raw.githubusercontent.com/SagentJ007/tools/main/monitoring/monitor.sh"
-docker="https://raw.githubusercontent.com/SagentJ007/tools/main/docker.sh"
-rust="https://raw.githubusercontent.com/SagentJ007/tools/main/rust.sh"
-go="https://raw.githubusercontent.com/SagentJ007/tools/main/go.sh"
-nodejs="https://raw.githubusercontent.com/SagentJ007/tools/main/node.sh"
-proxy="https://raw.githubusercontent.com/SagentJ007/tools/main/3proxy.sh"
+main="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/main.sh"
+monitoring="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/monitoring/monitor.sh"
+docker="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/docker.sh"
+rust="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/rust.sh"
+go="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/go.sh"
+nodejs="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/node.sh"
+proxy="https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/3proxy.sh"
 
 
 

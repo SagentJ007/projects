@@ -1,6 +1,6 @@
 ﻿#!/bin/bash
 echo "-----------------------------------------------------------------------------"
-curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/logo.sh | bash
+curl -s https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/logo.sh | bash
 echo "-----------------------------------------------------------------------------"
 
 # Функция для запроса параметра у пользователя
@@ -28,9 +28,9 @@ echo "--------------------------------------------------------------------------
 echo "Устанавливаем софт"
 echo "-----------------------------------------------------------------------------"
 sudo apt update -y
-bash <(curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/main.sh) &>/dev/null
-bash <(curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/ufw.sh) &>/dev/null
-bash <(curl -s https://raw.githubusercontent.com/SagentJ007/tools/main/docker.sh) &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/main.sh) &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/ufw.sh) &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/docker.sh) &>/dev/null
 
 echo "-----------------------------------------------------------------------------"
 echo "Весь необходимый софт установлен"
@@ -116,7 +116,7 @@ cd $HOME/infernet-container-starter/deploy
 docker compose down
 sleep 3
 sudo rm -rf docker-compose.yaml
-wget https://raw.githubusercontent.com/SagentJ007/guides/main/ritual/docker-compose.yaml
+wget https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/ritual/docker-compose.yaml
 docker compose up -d
 
 # docker rm -fv infernet-anvil  &>/dev/null
