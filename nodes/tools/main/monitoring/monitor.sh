@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 set_environment_variables() {
     if [ -z "$OWNER" ]; then

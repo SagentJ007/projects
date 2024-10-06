@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 echo "-----------------------------------------------------------------------------"
 curl -s https://raw.githubusercontent.com/SagentJ007/projects/refs/heads/main/nodes/tools/main/logo.sh | bash
 echo "-----------------------------------------------------------------------------"

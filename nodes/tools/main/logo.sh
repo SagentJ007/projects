@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 function colors {
   GREEN="\e[32m"
